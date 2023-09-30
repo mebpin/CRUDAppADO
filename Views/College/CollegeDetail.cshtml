@@ -1,0 +1,19 @@
+﻿@model CRUDAppADO.Models.College
+
+@{
+    ViewData["Title"] = "CollegeDetail";
+}
+
+<h1>CollegeDetail</h1>
+
+<div>
+    <h4>College ID :  @Model.ID</h4>
+    <h4>College Name :  @Model.Name</h4>
+    <h4>Address :  @Model.Address</h4>
+    <h4>Phone Number :  @Model.Phone</h4>
+     
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

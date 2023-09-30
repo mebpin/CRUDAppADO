@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CRUDAppADO.Models.College>
+@{
+    ViewData["Title"] = "AllColleges";
+}
+
+<h1>AllColleges</h1>
+
+<p>
+    <a asp-controller= "College" asp-action="CreateCollegeRecord">Create New Record</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th> College ID</th>
+            <th> College Name</th>
+            <th> Address</th>
+            <th> Phone</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var colz in Model) {
+        <tr>
+            <td>
+                @colz.ID
+            </td>
+            <td>
+                @colz.Name
+            </td>
+            <td>
+                @colz.Address
+            </td>
+            <td>
+                @colz.Phone
+            </td>
+            <td>
+                <a asp-controller ="College"asp-action="CollegeDetail" asp-route-id = "@colz.ID">View</a>
+                 ||<a asp-action="EditCollegeRecord" asp-route-id = "@colz.ID">Edit</a>
+                 ||<a asp-action="DeleteCollegeRecord"asp-route-id = "@colz.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
